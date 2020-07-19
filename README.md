@@ -1,4 +1,4 @@
-# eksplein.me ![status](https://img.shields.io/badge/status-early_concept-lightblue)<img align="right" width="120" height="120" src="https://avatars3.githubusercontent.com/u/68416933?s=200&v=4">
+# eksplein ![status](https://img.shields.io/badge/status-early_concept-lightblue)<img align="right" width="120" height="120" src="https://avatars3.githubusercontent.com/u/68416933?s=200&v=4">
 
 > explain — **_verb_** [ɪkˈspleɪn, ɛkˈspleɪn]<br>
 > <sup>_Make (an idea or situation) clear to someone by describing it in more detail or revealing relevant facts. ([source](https://www.lexico.com/definition/explain))_</sup>
@@ -80,4 +80,5 @@ Actix-based Eksplein **server** is under [**GPLv3 License**](https://github.com/
 
 Sapper-based Eksplein **client** is under [**GPLv3 License**](https://github.com/eksplein/website/master/LICENSE). ![License: MIT](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-Markdown-based Eksplein **posts**, code snippets not included, are, unless stated otherwise by the post author, under [**CC BY-SA License**](https://github.com/eksplein/eksplein/blob/master/client/LICENSE-POSTS.md). ![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
+Markdown-based Eksplein **posts**, code snippets not included, are, unless stated otherwise by the said post author, under the [**CC BY-SA License**](https://github.com/eksplein/eksplein/blob/master/client/LICENSE-POSTS.md). ![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
+
