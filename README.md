@@ -68,6 +68,21 @@ Run the server
 cargo run
 ```
 
+Display CLI usage guide
+
+```bash
+> cargo run -- --help
+EKSPLEIN v0.0.1
+usage: eksplein [-h] [-v] [-d PATH] [-p PORT] [-u URI]
+  --help, -h     —  Show CLI usage guide
+  --version, -v  —  Show CLI version
+  --dist, -d     —  Set frontend dist folder (default: dist/)
+  --port, -p     —  Set server port (default: 7000)
+  --uri, -u      —  Set Redis URI (default: redis://127.0.0.1/)
+```
+
+Assuming the server port value is **7000**, GraphQL Playground can now be accessed via `http://localhost:7000/graphql`.
+
 ## Inspirations
 
 - [DigitalOcean Community tutorials](https://www.digitalocean.com/community/tutorials) — DigitalOcean
