@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: Docker CI
+name: Docker
 
 steps:
 - name: Build Docker image
