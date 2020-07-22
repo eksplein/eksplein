@@ -1,8 +1,8 @@
 # Layer for cloning the Sapper frontend from Github
 FROM node as sapper-clone
 USER root
-RUN sudo apt-get update
-RUN sudo apt-get install -y git
+RUN apt-get update
+RUN apt-get install -y git
 USER node
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
