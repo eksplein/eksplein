@@ -5,11 +5,15 @@ name: Docker
 steps:
 - name: Build Docker image
   image: docker:latest
+  environment:
+    WEBHOOK_URL:
+      from_secret: WEBHOOK_URL
   volumes:
     - name: docker_sock
       path: /var/run/docker.sock
   commands:
   - docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t eksplein/eksplein:latest .
+  - curl -X POST $${WEBHOOK_URL}
 
 volumes:
 - name: docker_sock
