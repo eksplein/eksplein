@@ -13,7 +13,8 @@ steps:
 - name: Update production
   image: plugins/webhook
   settings:
-    from_secret: WEBHOOK_URL
+    urls:
+      from_secret: WEBHOOK_URL
 
 volumes:
 - name: docker_sock
