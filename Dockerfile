@@ -1,11 +1,12 @@
 # Layer for cloning the Sapper frontend from Github
 FROM node as sapper-clone
-USER node
+USER root
 RUN sudo apt-get update
 RUN sudo apt-get install -y git
-RUN sudo mkdir -p /home/node/app
+USER node
+RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
-RUN sudo git clone https://github.com/eksplein/website.git .
+RUN git clone https://github.com/eksplein/website.git .
 
 # Layer for building the Sapper frontend
 FROM node as sapper-export
