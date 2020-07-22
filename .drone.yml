@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: Docker CI
+
+steps:
+- name: Build Docker image
+  image: docker:latest
+  volumes:
+    - name: docker_sock
+      path: /var/run/docker.sock
+  commands:
+  - docker build -t eksplein/eksplein:latest .
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+trigger:
+  branch:
+  - master
