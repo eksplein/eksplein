@@ -36,7 +36,7 @@ pub fn parse() -> Context {
     // Create a context with default values
     let mut context = Context {
         dist: "dist/".to_string(),
-        port: 7000.to_string(),
+        port: 9494.to_string(),
         redis_uri: "redis://127.0.0.1/".to_string()
     };
 
@@ -53,7 +53,7 @@ pub fn parse() -> Context {
     help_guide.push_str("\n\n  --help, -h     —  Show CLI usage guide");
     help_guide.push_str("\n  --version, -v  —  Show CLI version");
     help_guide.push_str("\n  --dist, -d     —  Set frontend dist folder (default: dist/)");
-    help_guide.push_str("\n  --port, -p     —  Set server port (default: 7000)");
+    help_guide.push_str("\n  --port, -p     —  Set server port (default: 9494)");
     help_guide.push_str("\n  --uri, -u      —  Set Redis URI (default: redis://127.0.0.1/)");
 
     // If help requested, show the help usage guide and exit

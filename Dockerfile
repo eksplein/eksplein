@@ -53,5 +53,7 @@ COPY --from=rust-build /home/rust/src/target/x86_64-unknown-linux-musl/release/e
 COPY --from=rust-build /home/rust/src/static ./static
 COPY --from=sapper-export /home/node/app/__sapper__/export ./dist
 
+EXPOSE 9494
+
 # Run the statically linked binary
 ENTRYPOINT ["./eksplein"]
