@@ -12,11 +12,8 @@ steps:
   - docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t eksplein/eksplein:latest .
 - name: Update production
   image: plugins/webhook
-  environment:
-    WEBHOOK_URL:
-      from_secret: WEBHOOK_URL
   settings:
-    urls: $$WEBHOOK_URL
+    from_secret: WEBHOOK_URL
 
 volumes:
 - name: docker_sock
