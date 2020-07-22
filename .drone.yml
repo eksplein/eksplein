@@ -9,7 +9,7 @@ steps:
     - name: docker_sock
       path: /var/run/docker.sock
   commands:
-  - docker build -t eksplein/eksplein:latest .
+  - docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t eksplein/eksplein:latest .
 
 volumes:
 - name: docker_sock
