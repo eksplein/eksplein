@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: Docker 
+
+steps:
+- name: Build Docker image
+  image: docker:latest
+  volumes:
+    - name: docker_sock
+      path: /var/run/docker.sock
+  commands:
+  - docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t eksplein/eksplein:latest .
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+trigger:
+  branch:
+  - master
