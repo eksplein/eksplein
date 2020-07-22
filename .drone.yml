@@ -17,5 +17,5 @@ volumes:
     path: /var/run/docker.sock
 
 trigger:
-  event:
-  - push
+  branch:
+  - master
