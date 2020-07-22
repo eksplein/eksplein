@@ -15,7 +15,3 @@ volumes:
 - name: docker_sock
   host:
     path: /var/run/docker.sock
-
-trigger:
-  branch:
-  - master
