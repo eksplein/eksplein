@@ -49,11 +49,11 @@ RUN cargo build --release
 FROM alpine:latest
 
 # Copy artifacts from previous builds
-COPY --from=rust-build /home/rust/src/target/x86_64-unknown-linux-musl/release/eksplein ./eksplein
+COPY --from=rust-build /home/rust/src/target/x86_64-unknown-linux-musl/release/eksplein ./
 COPY --from=rust-build /home/rust/src/static ./static
 COPY --from=sapper-export /home/node/app/__sapper__/export ./dist
 
 EXPOSE 9494
 
 # Run the statically linked binary
-ENTRYPOINT ["./eksplein"]
+CMD ["./eksplein"]
