@@ -16,7 +16,7 @@ steps:
     WEBHOOK_URL:
       from_secret: WEBHOOK_URL
   settings:
-    urls: WEBHOOK_URL
+    urls: $$WEBHOOK_URL
 
 volumes:
 - name: docker_sock
