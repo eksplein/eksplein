@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Try to build Docker image
-      run: docker build -t my/eksplein .
+      run: docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t my/eksplein .

@@ -1,8 +1,16 @@
+# Dummy arg for a specfic later task we need to NOT cache
+# Usage : docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) ...
+ARG CACHE_DATE=not_a_date
+
 # Layer for cloning the Sapper frontend from Github
 FROM node as sapper-clone
 USER node
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
+
+# Use the dynamic CACHE_DATE arg mentionned before.
+# This allows to perform the following `git clone` command without caching
+ARG CACHE_DATE
 RUN git clone https://github.com/eksplein/website.git .
 
 # Layer for building the Sapper frontend
