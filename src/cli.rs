@@ -19,6 +19,7 @@
 
 use std::env;
 use std::process;
+use std::path::PathBuf;
 use ezcli::{named_flag, named_option, name::Name};
 
 #[derive(Clone)]
@@ -50,11 +51,11 @@ pub fn parse() -> Context {
     let mut help_guide = "EKSPLEIN v".to_string();
     help_guide.push_str(VERSION);
     help_guide.push_str("\nusage: eksplein [-h] [-v] [-d PATH] [-p PORT] [-u URI]");
-    help_guide.push_str("\n\n  --help, -h     —  Show CLI usage guide");
-    help_guide.push_str("\n  --version, -v  —  Show CLI version");
-    help_guide.push_str("\n  --dist, -d     —  Set frontend dist folder (default: dist/)");
-    help_guide.push_str("\n  --port, -p     —  Set server port (default: 9494)");
-    help_guide.push_str("\n  --uri, -u      —  Set Redis URI (default: redis://127.0.0.1/)");
+    help_guide.push_str("\n\n  --help, -h        —  Show CLI usage guide");
+    help_guide.push_str("\n  --version, -v     —  Show CLI version");
+    help_guide.push_str("\n  --dist, -d        —  Set frontend dist folder (default: dist/)");
+    help_guide.push_str("\n  --port, -p        —  Set server port (default: 9494)");
+    help_guide.push_str("\n  --redis_uri, -u   —  Set Redis URI (default: redis://127.0.0.1/)");
 
     // If help requested, show the help usage guide and exit
     if help {
@@ -72,6 +73,12 @@ pub fn parse() -> Context {
     match dist {
         Some(x) => context.dist = x,
         None => {},
+    }
+
+    // If dist folder doesn't exist, set 'context.dist' to the project root path
+    let dist_path: PathBuf = PathBuf::from(context.dist.clone());
+    if !dist_path.exists() {
+        context.dist = "./".to_string();
     }
 
     // If port provided, set 'context.port' value

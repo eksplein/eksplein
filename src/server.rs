@@ -78,7 +78,7 @@ pub async fn run(context: Context) -> io::Result<()> {
     let value = fetch_an_integer_from_redis(context.clone()).await;
     match value {
         Ok(value) => println!("{:#?}", value),
-        Err(e) => panic!("Couldn\'t connect to Redis database : {:?}", e),
+        Err(e) => println!("Couldn\'t connect to Redis database : {:?}", e),
     }
 
     // Set up server port mapping
